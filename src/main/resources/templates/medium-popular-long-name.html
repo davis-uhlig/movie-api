@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <span><a href="/">Home</a></span>
+    <span><a href="/now-playing">Now Playing</a></span>
+    <span><a href="/medium-popular-long-name">Medium Popular Long Name</a></span>
+</nav>
+    <h1>These movies are mediocre at best and have long names</h1>
+    <div th:each="movie : ${mediumPopularityLongNameMovies}">
+        <img width="150px" th:src="'http://image.tmdb.org/t/p/original' + ${movie.posterPath}"/>
+        <span th:text="${movie.title}"></span>
+    </div>
+</body>
+</html>
